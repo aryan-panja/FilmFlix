@@ -5,7 +5,7 @@
 
 import React, { useEffect, useState } from 'react';
 
-const API_URL = `http://www.omdbapi.com/?apikey=df544f63`;
+export const API_URL = `http://www.omdbapi.com/?apikey=df544f63`;
 
 const AppContext = React.createContext();
 
@@ -37,7 +37,7 @@ const AppProvider = ({ children }) => {
     useEffect(() => {
         let timerOut = setTimeout(() => {
             getMovies(`${API_URL}&s=${query}`);
-        }, 800);
+        }, 200);
 
         return () => clearTimeout(timerOut);
 
